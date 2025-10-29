@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'timescaledb_service/**'
+      - 'Dockerfile' 
+      - 'init/**'
 
 env:
   REGISTRY: ghcr.io
