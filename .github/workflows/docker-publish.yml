@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ toLower(github.repository) }}/timescaledb-event
+  IMAGE_NAME: ${{ lower(github.repository) }}/timescaledb-event
 
 jobs:
   build-and-push:
@@ -28,7 +28,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ toLower(github.actor) }}
+          username: ${{ lower(github.actor) }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Build and push Docker image
