@@ -8,7 +8,7 @@ CREATE TABLE event_info (
     event_id        INTEGER NOT NULL,
     event_type      INTEGER NOT NULL,
     event_entity_id INTEGER,
-    event_value     VARCHAR(512),
+    event_value     VARCHAR(1024),
     
     FOREIGN KEY (session_id) REFERENCES session (session_id),
     FOREIGN KEY (event_id) REFERENCES event (event_id),
