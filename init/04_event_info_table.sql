@@ -21,6 +21,6 @@ CREATE INDEX ON main (time DESC, session_id);
 
 CREATE INDEX ON main (event_id, time DESC);
 
-SELECT add_retention_policy('main', INTERVAL '1 year');
+SELECT add_retention_policy('main', INTERVAL '2 year');
 
 ALTER TABLE main SET (timescaledb.compress = true);
