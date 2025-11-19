@@ -15,12 +15,12 @@ CREATE TABLE event_info (
     FOREIGN KEY (event_type) REFERENCES submit (submit_type_id)
 );
 
-SELECT create_hypertable('main', 'time');
+SELECT create_hypertable('event_info', 'time');
 
-CREATE INDEX ON main (time DESC, session_id);
+CREATE INDEX ON event_info (time DESC, session_id);
 
-CREATE INDEX ON main (event_id, time DESC);
+CREATE INDEX ON event_info (event_id, time DESC);
 
-SELECT add_retention_policy('main', INTERVAL '2 year');
+SELECT add_retention_policy('event_info', INTERVAL '2 year');
 
-ALTER TABLE main SET (timescaledb.compress = true);
+ALTER TABLE event_info SET (timescaledb.compress = true);
