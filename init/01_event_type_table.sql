@@ -1,9 +1,9 @@
-CREATE TABLE event (
-    event_id    INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE event_type (
+    id    INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     event_name  VARCHAR(255) NOT NULL
 );
 
-INSERT INTO event (event_name) 
+INSERT INTO event_type (event_name)
 VALUES
        ('submit'),
        ('node_add'),
