@@ -1,4 +1,6 @@
 CREATE TABLE session (
-    session_id INTEGER NOT NULL PRIMARY KEY,
-    user_id    INTEGER NOT NULL
+    id UUID NOT NULL PRIMARY KEY,
+    user_id UUID NOT NULL,
+    task_id UUID NOT NULL,
+    created_at timestamp default current_timestamp
 );
